@@ -1,0 +1,32 @@
+//
+// Date: 2024-07-04.
+// Name: Dil Humyra Sultana Borna
+// Email: dhsborna@myseneca.ca
+// Student ID: 139166227
+
+#define _CRT_SECURE_NO_WARNINGS
+#include "Utils.h"
+
+using namespace std;
+
+namespace seneca {
+    int getIntMM(int min, int max) {
+        int input = -1;
+        do {
+            cin >> input;
+            if (cin.fail() || input < min || input > max) {
+                cout << "Invalid Selection, try again: ";
+                input = -1;
+            }
+
+            cin.clear();
+            // clear input buffer
+            char ch = 'x';
+            while (ch != '\n') {
+                ch = cin.get();
+            }
+        } while (cin.fail() || input < min || input > max);
+
+        return input;
+    }
+}
